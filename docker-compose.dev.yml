@@ -3,14 +3,14 @@ services:
   server:
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: ./Dockerfile.dev
       args:
         - http_proxy
         - https_proxy
         - no_proxy
     image: vindow/server:latest
     ports:
-      - "8081:8081"
+      - "8083:8083"
     stdin_open: true  # -i
     tty: true         # -t
     env_file:

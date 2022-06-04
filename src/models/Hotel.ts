@@ -8,12 +8,6 @@ export interface HotelRequest {
 }
 
 export interface HotelResponse {
-  // data: ServerData;
-  candidates: Hotel[];
-  status: string;
-}
-
-export interface ServerData {
   candidates: Hotel[];
   status: string;
 }

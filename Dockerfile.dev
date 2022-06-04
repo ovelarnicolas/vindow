@@ -1,0 +1,18 @@
+FROM node:16.13.1-alpine
+
+RUN apk update && apk add build-base git curl
+WORKDIR /opt
+
+COPY package.json yarn.lock tsconfig.json tsconfig.compile.json .barrelsby.json ./
+
+COPY ./src ./src
+
+COPY ./views ./views
+
+RUN yarn install --pure-lockfile
+
+EXPOSE 8083
+ENV PORT 8083
+ENV NODE_ENV development
+
+CMD ["yarn", "start"]
