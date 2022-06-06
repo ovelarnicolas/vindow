@@ -1,6 +1,6 @@
 import { PlatformTest } from "@tsed/common";
 import SuperTest from "supertest";
-import { HelloWorldController } from "./HelloWorldController";
+import { HotelController } from "./HotelController";
 import { Server } from "../../Server";
 
 describe("HelloWorldController", () => {
@@ -9,7 +9,7 @@ describe("HelloWorldController", () => {
   beforeEach(
     PlatformTest.bootstrap(Server, {
       mount: {
-        "/": [HelloWorldController],
+        "/": [HotelController],
       },
     })
   );
@@ -19,9 +19,11 @@ describe("HelloWorldController", () => {
 
   afterEach(PlatformTest.reset);
 
-  it("should call GET /hello-world", async () => {
-    const response = await request.get("/hello-world").expect(200);
+  it("should call GET rest/hotel?query", async () => {
+    const response = await request
+      .get("/hotel?query=sheraton buenos aires")
+      .expect(200);
 
-    expect(response.text).toEqual("hello");
+    expect(typeof response.body).toEqual("object");
   });
 });

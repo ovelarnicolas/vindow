@@ -1,5 +1,5 @@
 import { Service } from "@tsed/di";
-import { HotelResponse } from "src/models/Hotel";
+import { HotelResponse } from "src/interfaces/Hotel";
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { GOOGLE_API_KEY } from "../config/envs/index";
 
