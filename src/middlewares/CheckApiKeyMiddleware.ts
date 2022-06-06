@@ -1,11 +1,10 @@
-import { Required } from "@tsed/schema";
-import { Middleware, QueryParams } from "@tsed/common";
+import { Middleware } from "@tsed/common";
 import { NotFound } from "@tsed/exceptions";
-import { GOOGLE_API_KEY } from "src/config/envs";
+import { GOOGLE_API_KEY } from "../config/envs/index";
 
 @Middleware()
 export default class CheckQueryMiddleware {
-  async use(@Required() @QueryParams("query") query: string) {
+  async use() {
     console.log("middleware");
 
     if (!GOOGLE_API_KEY) {

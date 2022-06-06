@@ -3,7 +3,7 @@ import { Controller, UseBefore } from "@tsed/common";
 import { QueryParams } from "@tsed/platform-params";
 import { HotelResponse } from "src/interfaces/Hotel";
 import HotelService from "../../services/HotelService";
-import CheckQueryMiddleware from "src/middlewares/CheckApiKeyMiddleware";
+import CheckQueryMiddleware from "../../middlewares/CheckApiKeyMiddleware";
 
 @Controller("/hotel")
 export class HotelController {
