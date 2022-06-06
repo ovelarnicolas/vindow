@@ -39,20 +39,20 @@ $ yarn start:prod
 
 ```
 # build docker image
-docker compose build
+> docker compose build
 
 # start docker image
-docker compose up
+> docker compose up
 ```
 
 ## Docker Development
 
 ```
 # build docker image
-docker-compose -f docker-compose.dev.yml build
+> docker-compose -f docker-compose.dev.yml build
 
 # start docker image
-docker-compose -f docker-compose.dev.yml up
+> docker-compose -f docker-compose.dev.yml up
 ```
 
 ## Barrelsby
@@ -67,4 +67,39 @@ Edit `.barreslby.json` to customize it:
   "exclude": ["__mock__", "__mocks__", ".spec.ts"],
   "delete": true
 }
+```
+
+## Configuration
+
+This project uses environment file, please rename the `.env.example` to `.env` and update with your key from your Google account.
+
+## Google API
+
+This project it's requesting information from Google API, you will need an account and a project in Google Cloud in order to get the API KEY.
+
+## Test
+
+Tests are done with Jest and SuperTest packages.
+
+```
+# Run all Tests
+> yarn test
+
+# Run unit test
+> yarn test:unit
+
+# Run coverage test
+> yarn test:coverage
+```
+
+## EsLint & Prettier
+
+This projects uses EsLint and Prettier configurations to have better code.
+
+```
+# Run EsLint
+> yarn test:lint
+
+# Run EsLint fix
+> yarn test:lint:fix
 ```
